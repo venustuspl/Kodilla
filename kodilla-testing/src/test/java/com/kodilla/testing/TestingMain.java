@@ -1,6 +1,6 @@
 package com.kodilla.testing;
 
-import com.kodilla.testing.calculator.Calculator;
+import com.kodilla.main.Calculator;
 
 import static org.junit.Assert.assertEquals;
 
