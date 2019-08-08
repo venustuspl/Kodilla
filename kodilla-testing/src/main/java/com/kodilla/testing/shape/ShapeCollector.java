@@ -13,69 +13,24 @@ interface Shape {
 class ShapeCollector {
     List<Shape> figureList = new ArrayList<Shape>();
 
-    public void addFigure(Shape shape) {
+    public Boolean addFigure(Shape shape) {
+        return true;
     }
 
 
+    public Boolean removeFigure(Shape shape) {
+        return true;
+    }
 
-    public void removeFigure(Shape shape) {
+    public Shape getFigure(int n) {
+        return null;
 
     }
 
-
-
-    public Shape getFigure(int i) {
-        Shape shape = new Square();
-        return shape;
+    public Boolean showFigures() {
+        //zrobić za pomocą contains
+        return true;
     }
-
-
-
-    public void showFigures() {
-
-    }
-
 
 }
 
-class Square implements Shape {
-    public String getShapeName() {
-        return "";
-    }
-
-
-
-    public double getField() {
-        return 1.0;
-    }
-
-
-}
-
-class Triangle implements Shape {
-    public String getShapeName() {
-        return "";
-    }
-
-
-
-    public double getField() {
-        return 1.0;
-    }
-
-
-}
-
-class Circle implements Shape {
-    public String getShapeName() {
-        return "";
-    }
-
-
-
-    public double getField() {
-        return 1.0;
-    }
-
-
-}

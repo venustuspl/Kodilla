@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum;
+/*package com.kodilla.testing.forum;
 
 public class ForumComment {
     ForumPost forumPost;
@@ -43,3 +43,5 @@ public class ForumComment {
         return result;
     }
 }
+
+ */

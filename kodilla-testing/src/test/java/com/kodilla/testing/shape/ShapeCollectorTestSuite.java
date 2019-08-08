@@ -11,60 +11,116 @@ import static org.junit.Assert.assertTrue;
 
 public class ShapeCollectorTestSuite {
     @Test
+    public void testShapeSquareField() {
+
+        //Given
+
+        ShapeCollector shapeCollector = new ShapeCollector();
+
+        Shape square = new Square(5);
+
+        //When
+        Double result = square.getField();
+        // Then
+        assertEquals(25, result, 0);
+    }
+
+    @Test
+    public void testShapeCircleField() {
+
+        //Given
+
+        ShapeCollector shapeCollector = new ShapeCollector();
+
+        Shape circle = new Circle(5);
+
+        //When
+        Double result = circle.getField();
+        // Then
+        assertEquals(Math.round(5 * 3.14), result, 0);
+    }
+
+    @Test
+    public void testShapeTriangleField() {
+
+        //Given
+
+        ShapeCollector shapeCollector = new ShapeCollector();
+
+        Shape triangle = new Triangle(5, 2);
+
+        //When
+        Double result = triangle.getField();
+        // Then
+        assertEquals(Math.round(0.5 * 5 * 2), result, 0);
+    }
+
+    @Test
     public void testAddShapeSquare() {
 
         //Given
-        Shape shape = new Square("kwadrat", 5);
+
+        ShapeCollector shapeCollector = new ShapeCollector();
+
+        Shape square = new Square(5);
 
         //When
-        Boolean result;
-        result = ShapeCollector.addFigure(shape);
+        Boolean result = shapeCollector.addFigure(square);
 
         //Then
         assertTrue(result);
     }
 
-}
-
 
     @Test
     public void testRemoveShape() {
-        List<Shape> figureList = new ArrayList<Shape>();
 
-        Shape shape = new Triangle("trójkąt1", 5, 2);
-        figureList.add(shape);
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
 
-        removeFigure(shape);
+        Shape triangle = new Triangle(5, 2);
+        shapeCollector.addFigure(triangle);
+        //When
+        Boolean result = shapeCollector.removeFigure(triangle);
 
-
-        Assert.assertFalse(figureList.contains(shape));
+        //Then
+        assertTrue(result);
     }
+
 
     @Test
     public void testGetFigure() {
-        List<Shape> figureList = new ArrayList<Shape>();
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
 
-        Shape shape = new Triangle("trójkąt2", 5, 2);
-        figureList.add(shape);
+        Shape circle = new Circle(5);
+        shapeCollector.addFigure(circle);
+        //When
+        Boolean result = shapeCollector.getFigure(0) == (null);
 
-
-        assertEquals(0, figureList.indexOf(shape));
+        //Then
+        assertTrue(result);
     }
 
     @Test
     public void testShowFigures() {
-        List<Shape> figureList = new ArrayList<Shape>();
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Shape shape = new Triangle(5, 2);
+        Shape shape1 = new Square(2);
+        Shape shape2 = new Circle(5);
+        shapeCollector.addFigure(shape);
+        shapeCollector.addFigure(shape1);
+        shapeCollector.addFigure(shape2);
+        //When
+        boolean result = false;
+        if (shapeCollector.figureList.contains(shape) && shapeCollector.figureList.contains(shape1) && shapeCollector.figureList.contains(shape2)) {
+            result = true;
+        }
 
-        Shape shape = new Triangle("trójkąt2", 5, 2);
-        Shape shape1 = new Square("kwadrat", 2);
-        Shape shape2 = new Circle("koło", 5);
-        figureList.add(shape);
-        figureList.add(shape1);
-        figureList.add(shape2);
+        //Then
 
-
-        assertEquals(3, figureList.size() + 1);
+        assertTrue(result);
     }
-
-
 }
+

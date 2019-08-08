@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum;
+/*package com.kodilla.testing.forum;
 
 public class ForumPost {
     String postBody;
@@ -35,7 +35,7 @@ public class ForumPost {
         return result;
     }
     public int getCommentsQuantity() {
-        return ForumUser.comments.size();
+        return comments.size();
     }
 
     public void addComment(ForumPost thePost, String author, String commentBody) {
@@ -75,3 +75,5 @@ public class ForumPost {
         return result;
     }
 }
+
+ */
