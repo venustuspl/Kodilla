@@ -4,7 +4,10 @@ public class Square implements Shape {
 
     private String name = "Triangle";
 
-    public Square(int i) {
+    private double side;
+
+    public Square(double side) {
+        this.side = side;
     }
 
     public String getShapeName() {
@@ -12,7 +15,7 @@ public class Square implements Shape {
     }
 
     public double getField() {
-        return 25;
+        return side * side;
     }
 
 

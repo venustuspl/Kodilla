@@ -3,8 +3,13 @@ package com.kodilla.testing.shape;
 public class Triangle implements Shape {
 
     private String name = "Triangle";
+    private double base;
+    private double height;
 
-    public Triangle(double i, double i1) {
+
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
     }
 
     public String getShapeName() {
@@ -12,7 +17,7 @@ public class Triangle implements Shape {
     }
 
     public double getField() {
-        return 1.0;
+        return 0.5 * base * height;
     }
 
 

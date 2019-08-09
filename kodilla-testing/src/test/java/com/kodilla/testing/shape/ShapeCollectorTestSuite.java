@@ -1,10 +1,9 @@
 package com.kodilla.testing.shape;
 
-import org.junit.Assert;
+
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -37,7 +36,7 @@ public class ShapeCollectorTestSuite {
         //When
         Double result = circle.getField();
         // Then
-        assertEquals(Math.round(5 * 3.14), result, 0);
+        assertEquals(5 * 5 * 3.14, result, 0);
     }
 
     @Test
@@ -52,7 +51,7 @@ public class ShapeCollectorTestSuite {
         //When
         Double result = triangle.getField();
         // Then
-        assertEquals(Math.round(0.5 * 5 * 2), result, 0);
+        assertEquals(0.5 * 5 * 2, result, 0);
     }
 
     @Test
@@ -96,7 +95,7 @@ public class ShapeCollectorTestSuite {
         Shape circle = new Circle(5);
         shapeCollector.addFigure(circle);
         //When
-        Boolean result = shapeCollector.getFigure(0) == (null);
+        Boolean result = shapeCollector.getFigure(0) == (circle);
 
         //Then
         assertTrue(result);
@@ -114,7 +113,7 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(shape2);
         //When
         boolean result = false;
-        if (shapeCollector.figureList.contains(shape) && shapeCollector.figureList.contains(shape1) && shapeCollector.figureList.contains(shape2)) {
+        if (shapeCollector.showFigures(shape) && shapeCollector.showFigures(shape1) && shapeCollector.showFigures(shape2)) {
             result = true;
         }
 
