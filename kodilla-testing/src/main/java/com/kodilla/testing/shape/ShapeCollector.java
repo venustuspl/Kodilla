@@ -3,12 +3,7 @@ package com.kodilla.testing.shape;
 import java.util.List;
 import java.util.ArrayList;
 
-interface Shape {
-    public String getShapeName();
 
-    public double getField();
-
-}
 
 class ShapeCollector {
     List<Shape> figureList = new ArrayList<Shape>();
