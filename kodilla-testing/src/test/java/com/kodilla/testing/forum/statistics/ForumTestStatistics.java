@@ -51,5 +51,16 @@ public class ForumTestStatistics {
         Assert.assertEquals(25, statistics.postsCount());
     }
 
+    @Test
+    public void testForumStaisticAdvWithMock() {
+        //Given
+        ForumStatistics statistics = mock(ForumStatistics.class);
+
+        when(statistics.getAvgUserPosts()).thenReturn((double) 25);
+
+
+        Assert.assertEquals(25.0, statistics.getAvgUserPosts(),0);
+    }
+
 
 }

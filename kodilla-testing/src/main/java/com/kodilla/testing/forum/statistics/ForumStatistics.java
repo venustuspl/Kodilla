@@ -8,6 +8,8 @@ public class ForumStatistics implements Statistics {
     private double avgUserComents;
     private double avgPostComents;
 
+
+
     public ForumStatistics(Statistics statistics) {
 
     }
@@ -20,7 +22,12 @@ public class ForumStatistics implements Statistics {
     }
 
     public String showStatistics() {
+
         return this.avgUserComents + " " + this.avgUserPosts + " " + this.avgPostComents;
+    }
+
+    public double getAvgUserPosts() {
+        return avgUserPosts;
     }
 
     @Override
