@@ -1,4 +1,4 @@
-/*
+
 package com.kodilla.testing.forum;
 
 
@@ -81,4 +81,3 @@ public int getCommentsQuantity() {
 
   }
 
- */
