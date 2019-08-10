@@ -15,7 +15,7 @@ public class ForumStatistics implements Statistics {
 
 
     public void calculateAdvStatistics() {
-        if (usersNames().size() > 0) {
+       if (usersNames().size() > 0) {
             this.avgUserPosts = postsCount() / usersNames().size();
             this.avgUserComents = commentsCount() / usersNames().size();
         } else {
@@ -37,7 +37,15 @@ public class ForumStatistics implements Statistics {
     }
 
     public double getAvgUserPosts() {
-        return avgUserPosts;
+        return this.avgUserPosts;
+    }
+
+    public double getAvgUserComents(){
+        return this.avgUserComents;
+    }
+
+    public double getAvgPostComents(){
+        return this.avgPostComents;
     }
 
     @Override

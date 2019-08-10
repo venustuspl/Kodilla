@@ -21,7 +21,6 @@ public class ForumTestStatistics {
         names.add("Maciek");
 
 
-
         when(statistics.usersNames()).thenReturn(names);
 
         Assert.assertEquals(3, statistics.usersNames().size());
@@ -52,7 +51,7 @@ public class ForumTestStatistics {
     }
 
     @Test
-    public void testForumStaisticAdvWithMock() {
+    public void testForumStaisticAdvWithMockZeroPost() {
         //Given
         Statistics statistics = mock(Statistics.class);
         when(statistics.postsCount()).thenReturn(5);
@@ -65,5 +64,44 @@ public class ForumTestStatistics {
         Assert.assertEquals(0, forumStatistics.getAvgUserPosts(), 0);
     }
 
+    @Test
+    public void testForumStaisticAdvWithMock1000Post() {
+        //Given
+        Statistics statistics = mock(Statistics.class);
+        when(statistics.postsCount()).thenReturn(1000);
+        List<String> names = new ArrayList<String>();
+        when(statistics.usersNames()).thenReturn(names);
+        ForumStatistics forumStatistics = new ForumStatistics(statistics);
+        forumStatistics.calculateAdvStatistics();
 
+
+        Assert.assertEquals(0, forumStatistics.getAvgUserPosts(), 0);
+    }
+
+    @Test
+    public void testForumStaisticAdvWithMockZeroComments() {
+        //Given
+        Statistics statistics = mock(Statistics.class);
+        when(statistics.commentsCount()).thenReturn(0);
+        List<String> names = new ArrayList<String>();
+        when(statistics.usersNames()).thenReturn(names);
+        ForumStatistics forumStatistics = new ForumStatistics(statistics);
+        forumStatistics.calculateAdvStatistics();
+
+
+        Assert.assertEquals(0, forumStatistics.getAvgUserComents(), 0);
+    }
+
+    @Test
+    public void testForumStaisticAdvWithMockCommentsLessThanPosts() {
+        //Given
+        ForumStatistics forumStatistics = mock(ForumStatistics.class);
+        when(forumStatistics.commentsCount()).thenReturn(2);
+        List<String> names = new ArrayList<String>();
+        names.add("Tomek");
+        when(forumStatistics.usersNames()).thenReturn(names);
+        forumStatistics.calculateAdvStatistics();
+
+        Assert.assertEquals(2, forumStatistics.getAvgUserComents(), 0);
+    }
 }
