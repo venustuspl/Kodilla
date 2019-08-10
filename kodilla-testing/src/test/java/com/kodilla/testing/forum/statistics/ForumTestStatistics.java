@@ -20,7 +20,7 @@ public class ForumTestStatistics {
         names.add("Adam");
         names.add("Maciek");
 
-        when(statistics.usersNames()).thenReturn(names);
+
 
         when(statistics.usersNames()).thenReturn(names);
 
@@ -54,12 +54,15 @@ public class ForumTestStatistics {
     @Test
     public void testForumStaisticAdvWithMock() {
         //Given
-        ForumStatistics statistics = mock(ForumStatistics.class);
+        Statistics statistics = mock(Statistics.class);
+        when(statistics.postsCount()).thenReturn(5);
+        List<String> names = new ArrayList<String>();
+        when(statistics.usersNames()).thenReturn(names);
+        ForumStatistics forumStatistics = new ForumStatistics(statistics);
+        forumStatistics.calculateAdvStatistics();
 
-        when(statistics.getAvgUserPosts()).thenReturn((double) 25);
 
-
-        Assert.assertEquals(25.0, statistics.getAvgUserPosts(),0);
+        Assert.assertEquals(0, forumStatistics.getAvgUserPosts(), 0);
     }
 
 
