@@ -1,6 +1,10 @@
 package com.kodilla.testing.forum.statistics;
+
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -8,26 +12,44 @@ import static org.mockito.Mockito.when;
 public class ForumTestStatistics {
 
     @Test
-    public void testCalculateForecastWithMock() {
+    public void testForumStaisticUserNamesWithMock() {
+        //Given
+        Statistics statistics = mock(Statistics.class);
+        List<String> names = new ArrayList<String>();
+        names.add("Tomek");
+        names.add("Adam");
+        names.add("Maciek");
+
+        when(statistics.usersNames()).thenReturn(names);
+
+        when(statistics.usersNames()).thenReturn(names);
+
+        Assert.assertEquals(3, statistics.usersNames().size());
+
+    }
+
+    @Test
+    public void testForumStaisticComentsCountWithMock() {
         //Given
         Statistics statistics = mock(Statistics.class);
 
-        //when(statistics.usersNames()).thenReturn();
-
-        when(statistics.commentsCount()).thenReturn(10);
-
-        when(statistics.postsCount()).thenReturn(20);
-
-        ForumStatistics forumStatistics = new ForumStatistics(statistics);
+        when(statistics.commentsCount()).thenReturn(20);
 
 
+        Assert.assertEquals(20, statistics.commentsCount());
 
-        //When
-        int users = forumStatistics.usersNames().size();
-        //double usersPosts = forumStatistics. ;
-        //double usersComments = forumStatistics.commentsCount();
-        //double postComments = forumStatistics.
-        //Then
-        Assert.assertEquals(3, users);
     }
+
+    @Test
+    public void testForumStaisticPostCountWithMock() {
+        //Given
+        Statistics statistics = mock(Statistics.class);
+
+        when(statistics.postsCount()).thenReturn(25);
+
+
+        Assert.assertEquals(25, statistics.postsCount());
+    }
+
+
 }
