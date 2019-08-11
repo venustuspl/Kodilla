@@ -19,4 +19,8 @@ public class BookLibrary {
         bookList = resultList;
         return bookList;
     }
+
+    public int listBooksInHandsOf(LibraryUser libraryUser){
+        return 0;
+    }
 }

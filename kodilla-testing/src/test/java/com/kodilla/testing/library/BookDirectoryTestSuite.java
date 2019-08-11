@@ -88,4 +88,58 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
+    @Test
+    public void testListBooksInHandsOfWithZeroBooks(){
+
+        BookLibrary bookLibrary =  mock(BookLibrary.class);
+        List<Book> booksList = new ArrayList<>();
+        LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "12345678999");
+        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(0);
+
+        assertEquals(0,bookLibrary.listBooksInHandsOf(libraryUser));
+
+
+
+    }
+
+    @Test
+    public void testListBooksInHandsOfWithOneBook(){
+
+        BookLibrary bookLibrary =  mock(BookLibrary.class);
+        List<Book> booksList = new ArrayList<>();
+        Book book = new Book("Live","John Doe",1977);
+        booksList.add(book);
+        LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "1234567891011");
+        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(1);
+
+        assertEquals(1,bookLibrary.listBooksInHandsOf(libraryUser));
+
+
+
+    }
+
+    @Test
+    public void testListBooksInHandsOfWithFiveBooks(){
+
+        BookLibrary bookLibrary =  mock(BookLibrary.class);
+        List<Book> booksList = new ArrayList<>();
+        Book book = new Book("Live","John Doe",1977);
+        Book book1 = new Book("Live1","John Doe",1978);
+        Book book2 = new Book("Live2","John Doe",1979);
+        Book book3 = new Book("Live3","John Doe",1980);
+        Book book4 = new Book("Live4","John Doe",1981);
+
+        booksList.add(book);
+        booksList.add(book1);
+        booksList.add(book2);
+        booksList.add(book3);
+        booksList.add(book4);
+        LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "1234567891011");
+        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(5);
+
+        assertEquals(5,bookLibrary.listBooksInHandsOf(libraryUser));
+
+
+
+    }
 }
