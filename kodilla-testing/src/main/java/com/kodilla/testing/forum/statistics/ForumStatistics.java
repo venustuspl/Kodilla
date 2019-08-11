@@ -3,7 +3,9 @@ package com.kodilla.testing.forum.statistics;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForumStatistics implements Statistics {
+public class ForumStatistics  {
+
+    Statistics statistics;
     private double avgUserPosts;
     private double avgUserComents;
     private double avgPostComents;
@@ -14,17 +16,17 @@ public class ForumStatistics implements Statistics {
     }
 
 
-    public void calculateAdvStatistics() {
-       if (usersNames().size() > 0) {
-            this.avgUserPosts = postsCount() / usersNames().size();
-            this.avgUserComents = commentsCount() / usersNames().size();
+    public void calculateAdvStatistics(Statistics statistics) {
+       if (statistics.usersNames().size() > 0) {
+            this.avgUserPosts = statistics.postsCount() / statistics.usersNames().size();
+            this.avgUserComents = statistics.commentsCount() / statistics.usersNames().size();
         } else {
             this.avgUserPosts = 0;
             this.avgUserComents = 0;
         }
 
-        if (postsCount() > 0) {
-            this.avgPostComents = commentsCount() / postsCount();
+        if (statistics.postsCount() > 0) {
+            this.avgPostComents = statistics.commentsCount() / statistics.postsCount();
         }
         else {
             this.avgPostComents = 0;
@@ -47,8 +49,7 @@ public class ForumStatistics implements Statistics {
     public double getAvgPostComents(){
         return this.avgPostComents;
     }
-
-    @Override
+/*
     public List<String> usersNames() {
         List<String> names = new ArrayList<String>();
 
@@ -56,15 +57,13 @@ public class ForumStatistics implements Statistics {
         return names;
     }
 
-    @Override
     public int postsCount() {
         return 0;
     }
 
-    @Override
     public int commentsCount() {
         return 0;
     }
-
+*/
 
 }
