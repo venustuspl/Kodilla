@@ -18,8 +18,8 @@ public class ForumStatistics {
 
     public void calculateAdvStatistics(Statistics statistics) {
         if (statistics.usersNames().size() > 0) {
-            this.avgUserPosts = statistics.postsCount() / statistics.usersNames().size();
-            this.avgUserComents = statistics.commentsCount() / statistics.usersNames().size();
+            this.avgUserPosts = (double)statistics.postsCount() / statistics.usersNames().size();
+            this.avgUserComents = (double)statistics.commentsCount() / statistics.usersNames().size();
         } else {
             this.avgUserPosts = 0;
             this.avgUserComents = 0;
@@ -27,7 +27,7 @@ public class ForumStatistics {
 
         if (statistics.postsCount() > 0) {
 
-            this.avgPostComents = statistics.commentsCount() / statistics.postsCount();
+            this.avgPostComents = (double)statistics.commentsCount() / statistics.postsCount();
         } else {
             this.avgPostComents = 0;
         }

@@ -149,7 +149,7 @@ public class ForumTestStatistics {
     public void testForumStaisticAdvWithMock1000Users() {
         //Given
         Statistics statistics = mock(Statistics.class);
-        when(statistics.commentsCount()).thenReturn(300);
+        when(statistics.commentsCount()).thenReturn(500);
         when(statistics.postsCount()).thenReturn(150);
 
         List<String> names = new ArrayList<String>();
@@ -161,7 +161,7 @@ public class ForumTestStatistics {
         forumStatistics.calculateAdvStatistics(statistics);
 
 
-        Assert.assertEquals(0, forumStatistics.getAvgUserComents(), 0);
+        Assert.assertEquals(0.03, forumStatistics.getAvgUserComents(), 0);
     }
 
 
