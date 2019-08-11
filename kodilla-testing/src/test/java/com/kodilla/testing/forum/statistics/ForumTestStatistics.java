@@ -54,7 +54,7 @@ public class ForumTestStatistics {
     public void testForumStaisticAdvWithMockZeroPost() {
         //Given
         Statistics statistics = mock(Statistics.class);
-        when(statistics.postsCount()).thenReturn(5);
+        when(statistics.postsCount()).thenReturn(0);
         List<String> names = new ArrayList<String>();
         when(statistics.usersNames()).thenReturn(names);
         ForumStatistics forumStatistics = new ForumStatistics(statistics);
@@ -70,19 +70,20 @@ public class ForumTestStatistics {
         Statistics statistics = mock(Statistics.class);
         when(statistics.postsCount()).thenReturn(1000);
         List<String> names = new ArrayList<String>();
+        names.add("T1000");
         when(statistics.usersNames()).thenReturn(names);
         ForumStatistics forumStatistics = new ForumStatistics(statistics);
         forumStatistics.calculateAdvStatistics(statistics);
 
 
-        Assert.assertEquals(0, forumStatistics.getAvgUserPosts(), 0);
+        Assert.assertEquals(1000, forumStatistics.getAvgUserPosts(), 0);
     }
 
     @Test
     public void testForumStaisticAdvWithMockZeroComments() {
         //Given
         Statistics statistics = mock(Statistics.class);
-        when(statistics.commentsCount()).thenReturn(2);
+        when(statistics.commentsCount()).thenReturn(0);
         List<String> names = new ArrayList<String>();
         names.add("T");
         when(statistics.usersNames()).thenReturn(names);
@@ -90,7 +91,7 @@ public class ForumTestStatistics {
         forumStatistics.calculateAdvStatistics(statistics);
 
 
-        Assert.assertEquals(2, forumStatistics.getAvgUserComents(), 0);
+        Assert.assertEquals(0, forumStatistics.getAvgUserComents(), 0);
     }
 
 }
