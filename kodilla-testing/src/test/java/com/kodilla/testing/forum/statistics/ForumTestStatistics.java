@@ -125,7 +125,7 @@ public class ForumTestStatistics {
         forumStatistics.calculateAdvStatistics(statistics);
 
 
-        Assert.assertEquals(3, forumStatistics.getAvgPostComents(), 0);
+        Assert.assertEquals(0.33333, forumStatistics.getAvgPostComents(), 1);
     }
 
     @Test
@@ -161,7 +161,7 @@ public class ForumTestStatistics {
         forumStatistics.calculateAdvStatistics(statistics);
 
 
-        Assert.assertEquals(0.03, forumStatistics.getAvgUserComents(), 0);
+        Assert.assertEquals(0.03, forumStatistics.getAvgUserComents(), 1);
     }
 
 
