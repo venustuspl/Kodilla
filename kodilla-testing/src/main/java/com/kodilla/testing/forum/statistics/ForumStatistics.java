@@ -3,7 +3,7 @@ package com.kodilla.testing.forum.statistics;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForumStatistics  {
+public class ForumStatistics {
 
     Statistics statistics;
     private double avgUserPosts;
@@ -17,7 +17,7 @@ public class ForumStatistics  {
 
 
     public void calculateAdvStatistics(Statistics statistics) {
-       if (statistics.usersNames().size() > 0) {
+        if (statistics.usersNames().size() > 0) {
             this.avgUserPosts = statistics.postsCount() / statistics.usersNames().size();
             this.avgUserComents = statistics.commentsCount() / statistics.usersNames().size();
         } else {
@@ -26,12 +26,12 @@ public class ForumStatistics  {
         }
 
         if (statistics.postsCount() > 0) {
+
             this.avgPostComents = statistics.commentsCount() / statistics.postsCount();
-        }
-        else {
+        } else {
             this.avgPostComents = 0;
         }
-        }
+    }
 
     public String showStatistics() {
 
@@ -42,11 +42,11 @@ public class ForumStatistics  {
         return this.avgUserPosts;
     }
 
-    public double getAvgUserComents(){
+    public double getAvgUserComents() {
         return this.avgUserComents;
     }
 
-    public double getAvgPostComents(){
+    public double getAvgPostComents() {
         return this.avgPostComents;
     }
 /*
