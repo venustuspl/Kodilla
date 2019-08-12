@@ -91,13 +91,14 @@ public class BookDirectoryTestSuite {
 
     @Test
     public void testListBooksInHandsOfWithZeroBooks() {
+        LibraryDatabase libraryDatabase = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary =  new BookLibrary(libraryDatabase);
 
-        BookLibrary bookLibrary = mock(BookLibrary.class);
         List<Book> booksList = new ArrayList<>();
         LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "12345678999");
-        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
+        when(libraryDatabase.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
 
-        assertEquals(0, bookLibrary.listBooksInHandsOf(libraryUser).size());
+        assertEquals(0, libraryDatabase.listBooksInHandsOf(libraryUser).size());
 
 
     }
@@ -105,15 +106,15 @@ public class BookDirectoryTestSuite {
 
     @Test
     public void testListBooksInHandsOfWithOneBook(){
-
-        BookLibrary bookLibrary =  mock(BookLibrary.class);
+        LibraryDatabase libraryDatabase = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary =  new BookLibrary(libraryDatabase);
         List<Book> booksList = new ArrayList<>();
         Book book = new Book("Live","John Doe",1977);
         booksList.add(book);
         LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "1234567891011");
-        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
+        when(libraryDatabase.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
 
-        assertEquals(1,bookLibrary.listBooksInHandsOf(libraryUser).size());
+        assertEquals(1,libraryDatabase.listBooksInHandsOf(libraryUser).size());
 
 
 
@@ -122,7 +123,8 @@ public class BookDirectoryTestSuite {
     @Test
     public void testListBooksInHandsOfWithFiveBooks(){
 
-        BookLibrary bookLibrary =  mock(BookLibrary.class);
+        LibraryDatabase libraryDatabase = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary =  new BookLibrary(libraryDatabase);
         List<Book> booksList = new ArrayList<>();
         Book book = new Book("Live","John Doe",1977);
         Book book1 = new Book("Live1","John Doe",1978);
@@ -136,9 +138,9 @@ public class BookDirectoryTestSuite {
         booksList.add(book3);
         booksList.add(book4);
         LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "1234567891011");
-        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
+        when(libraryDatabase.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
 
-        assertEquals(5,bookLibrary.listBooksInHandsOf(libraryUser).size());
+        assertEquals(5,libraryDatabase.listBooksInHandsOf(libraryUser).size());
 
 
 
