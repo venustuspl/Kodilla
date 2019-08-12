@@ -14,7 +14,7 @@ import static org.mockito.internal.verification.VerificationModeFactory.times;
 public class BookDirectoryTestSuite {
     private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<Book>();
-        for(int n = 1; n <= booksQuantity; n++){
+        for (int n = 1; n <= booksQuantity; n++) {
             Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
             resultList.add(theBook);
         }
@@ -88,19 +88,20 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
-    @Test
-    public void testListBooksInHandsOfWithZeroBooks(){
 
-        BookLibrary bookLibrary =  mock(BookLibrary.class);
+    @Test
+    public void testListBooksInHandsOfWithZeroBooks() {
+
+        BookLibrary bookLibrary = mock(BookLibrary.class);
         List<Book> booksList = new ArrayList<>();
         LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "12345678999");
-        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(0);
+        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
 
-        assertEquals(0,bookLibrary.listBooksInHandsOf(libraryUser));
-
+        assertEquals(0, bookLibrary.listBooksInHandsOf(libraryUser).size());
 
 
     }
+
 
     @Test
     public void testListBooksInHandsOfWithOneBook(){
@@ -110,9 +111,9 @@ public class BookDirectoryTestSuite {
         Book book = new Book("Live","John Doe",1977);
         booksList.add(book);
         LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "1234567891011");
-        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(1);
+        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
 
-        assertEquals(1,bookLibrary.listBooksInHandsOf(libraryUser));
+        assertEquals(1,bookLibrary.listBooksInHandsOf(libraryUser).size());
 
 
 
@@ -135,9 +136,9 @@ public class BookDirectoryTestSuite {
         booksList.add(book3);
         booksList.add(book4);
         LibraryUser libraryUser = new LibraryUser("Tom", "Hanks", "1234567891011");
-        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(5);
+        when(bookLibrary.listBooksInHandsOf(libraryUser)).thenReturn(booksList);
 
-        assertEquals(5,bookLibrary.listBooksInHandsOf(libraryUser));
+        assertEquals(5,bookLibrary.listBooksInHandsOf(libraryUser).size());
 
 
 
