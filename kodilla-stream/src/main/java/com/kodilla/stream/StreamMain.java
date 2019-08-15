@@ -1,5 +1,20 @@
 package com.kodilla.stream;
 
+
+import world.Continent;
+import world.Country;
+import world.World;
+
+import java.math.BigDecimal;
+
+public class StreamMain {
+    public static void main(String[] args) {
+
+    }
+}
+
+
+        /*
 import com.kodilla.stream.forumuser.ForumUser;
 
 import com.kodilla.stream.forumuser.Forum;
@@ -10,9 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-public class StreamMain {
-    public static void main(String[] args) {
 
         Forum theForumUserList = new Forum();
 
@@ -33,7 +45,7 @@ public class StreamMain {
 }
 
 
-/*
+
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.lambda.ExecuteSaySomething;
