@@ -11,18 +11,18 @@ import static org.junit.Assert.assertEquals;
 
 public class WorldTestSuite {
     @Test
-   public void testGetPeopleQuantity(){
+    public void testGetPeopleQuantity() {
 
-        Country country1 = new Country("Poland",new BigDecimal(40000005));
-        Country country2 = new Country("Germany",new BigDecimal(60000003));
-        Country country3 = new Country("Spain",new BigDecimal(50000001));
+        Country country1 = new Country("Poland", new BigDecimal(40000005));
+        Country country2 = new Country("Germany", new BigDecimal(60000003));
+        Country country3 = new Country("Spain", new BigDecimal(50000001));
 
-        Country country4 = new Country("RPA",new BigDecimal(60000));
-        Country country5 = new Country("Egypt",new BigDecimal(80001));
+        Country country4 = new Country("RPA", new BigDecimal(60000));
+        Country country5 = new Country("Egypt", new BigDecimal(80001));
 
-        Country country6 = new Country("USA",new BigDecimal(1770000000));
-        Country country7 = new Country("Canada",new BigDecimal(8000000));
-        Country country8 = new Country("Mexico",new BigDecimal(22000000));
+        Country country6 = new Country("USA", new BigDecimal(1770000000));
+        Country country7 = new Country("Canada", new BigDecimal(8000000));
+        Country country8 = new Country("Mexico", new BigDecimal(22000000));
 
         Continent europe = new Continent("Europa");
         europe.countryAdd(country1);
@@ -45,23 +45,7 @@ public class WorldTestSuite {
         world.conntinetAdd(americaN);
 
 
-        assertEquals(new BigDecimal(1950140010),world.getPeopleQuantity());
-
-       // System.out.printf(String.valueOf(world.getPeopleQuantity()));
-
-/*
-
-        BigDecimal totalPeople = continents.stream()
-                .map(SandStorage::getSandBeansQuantity)
-                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
-
-
-
-
-*/
-
-
-
+        assertEquals(new BigDecimal(1950140010), world.getPeopleQuantity());
 
     }
 

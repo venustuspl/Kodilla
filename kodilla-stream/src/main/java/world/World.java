@@ -7,20 +7,19 @@ import java.util.stream.Collectors;
 
 public class World {
     private String name;
-    private List<Continent> continentList = new ArrayList<>();
+    private List<Continent> continents = new ArrayList<>();
 
     public World(String name) {
         this.name = name;
     }
 
     public void conntinetAdd(Continent continent) {
-        this.continentList.add(continent);
+        this.continents.add(continent);
     }
 
     public BigDecimal getPeopleQuantity() {
-        BigDecimal totalPeople = continentList.stream()
-                .flatMap(continent -> continent.getCountriesList().stream())
-                //.filter(country -> country != this)
+        BigDecimal totalPeople = continents.stream()
+                .flatMap(continents -> continents.getCountriesList().stream())
                 .map(Country::getPeopleQuantity)
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
 
