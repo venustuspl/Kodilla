@@ -3,7 +3,6 @@ package world;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class World {
     private String name;
@@ -19,7 +18,7 @@ public class World {
 
     public BigDecimal getPeopleQuantity() {
         BigDecimal totalPeople = continents.stream()
-                .flatMap(continents -> continents.getCountriesList().stream())
+                .flatMap(continents -> continents.getCountries().stream())
                 .map(Country::getPeopleQuantity)
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
 

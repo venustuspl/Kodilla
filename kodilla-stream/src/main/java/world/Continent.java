@@ -5,17 +5,17 @@ import java.util.List;
 
 public class Continent {
     private String name;
-    private List<Country> countriesList = new ArrayList<>();
+    private List<Country> countries = new ArrayList<>();
 
     public Continent(final String name) {
         this.name = name;
     }
 
     public void countryAdd(Country country) {
-        this.countriesList.add(country);
+        this.countries.add(country);
     }
 
-    public List<Country> getCountriesList() {
-        return this.countriesList;
+    public List<Country> getCountries() {
+        return this.countries;
     }
 }
