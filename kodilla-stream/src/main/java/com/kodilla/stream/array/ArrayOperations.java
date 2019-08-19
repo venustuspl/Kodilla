@@ -12,10 +12,15 @@ interface ArrayOperations {
                 .map(i -> numbers[i])
                 .forEach(System.out::println);
 
-        OptionalDouble average = IntStream.range(0, numbers.length)
-                .map(i -> numbers[i])
-                .average();
+        OptionalDouble average;
 
+        if (numbers.length < 1) {
+            average = OptionalDouble.empty();
+        } else {
+            average = IntStream.range(0, numbers.length)
+                    .map(i -> numbers[i])
+                    .average();
+        }
         return average.getAsDouble();
     }
 }
