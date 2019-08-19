@@ -125,9 +125,11 @@ public class BoardTestSuite {
 
     @Test
     public void testAddTaskListAverageWorkingOnTask() {
-        //Given
-        Board project = prepareTestData();
+  /* Old version
+    //Given taski, board z metodą calculate - średni kod tasku,konkretna data , średnia w board
+        //Board project = prepareTestData();
         //When
+
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
         List<LocalDate> tasks = project.getTaskLists().stream()
@@ -139,8 +141,44 @@ public class BoardTestSuite {
         Double averageTaskTime = LongStream.range(0, tasks.size())
                 .map(t -> ChronoUnit.DAYS.between(tasks.get((int) t), LocalDate.now()))
                 .average().getAsDouble();
+*/
+
+        User user1 = new User("developer1", "John Smith");
+        User user2 = new User("projectmanager1", "Nina White");
+        User user3 = new User("developer2", "Emilia Stephanson");
+
+        //tasks
+        Task task1 = new Task("Microservice for taking temperature",
+                "Write and test the microservice taking\n" +
+                        "the temperaure from external service",
+                user1,
+                user2,
+                LocalDate.now().minusDays(20),
+                LocalDate.now().plusDays(30));
+        Task task2 = new Task("HQLs for analysis",
+                "Prepare some HQL queries for analysis",
+                user1,
+                user2,
+                LocalDate.now().minusDays(20),
+                LocalDate.now().minusDays(5));
+        Task task3 = new Task("Temperatures entity",
+                "Prepare entity for temperatures",
+                user3,
+                user2,
+                LocalDate.now().minusDays(20),
+                LocalDate.now().plusDays(15));
+
+        TaskList taskListInProgress = new TaskList("In progress");
+        taskListInProgress.addTask(task1);
+        taskListInProgress.addTask(task2);
+        taskListInProgress.addTask(task3);
+
+        //board
+        Board project = new Board("Project Weather Prediction");
+        project.addTaskList(taskListInProgress);
+
 
         //Then
-        Assert.assertEquals(10.0, averageTaskTime, 0.1);
+        Assert.assertEquals(20.0, project.calculateAverageTaskDays(project), 0.1);
     }
 }
