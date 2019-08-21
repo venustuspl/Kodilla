@@ -14,6 +14,7 @@ public class ExceptionHandling extends Exception {
             //throw new ExceptionHandling();
         } finally {
             System.out.println("Koniec programu.");
+
         }
 
     }
