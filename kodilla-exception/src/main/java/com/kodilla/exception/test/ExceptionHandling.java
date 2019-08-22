@@ -1,10 +1,8 @@
 package com.kodilla.exception.test;
 
-public class ExceptionHandling extends Exception {
+public class ExceptionHandling  {
 
-    public ExceptionHandling(String message) {
-        super(message);
-    }
+
 
     public static void main(String[] args) {
 
@@ -13,7 +11,7 @@ public class ExceptionHandling extends Exception {
         try {
             System.out.println(second.probablyIWillThrowException(4.0, 5.0));
 
-        } catch (ExceptionHandling e) {
+        } catch (WrongArgumentException e) {
             //e.showExceptionDecription();
             System.out.println(e);
             //throw new WrongArgumentException();

@@ -7,7 +7,7 @@ class Main {
         Flight flight = new Flight("Warszawa", "Gd");
         ControlTower controltower = new ControlTower();
         controltower.addToAirports("Warszawa", true);
-         controltower.addToAirports("Gd",true);
+        controltower.addToAirports("Gd",true);
 
         try {
             controltower.findFilght(flight);
