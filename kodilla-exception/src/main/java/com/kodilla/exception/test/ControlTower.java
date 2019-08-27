@@ -8,6 +8,10 @@ public class ControlTower {
     private Map<String, Boolean> airports = new HashMap<String, Boolean>();
 
     public void findFilght(Flight flight) throws RouteNotFoundException {
+//klucz lotnisko, liste lotnisk docelowych
+        // berlin i liste lotnisk na które listę można do
+
+        //rekurencja
 
         //airports.put("Warszawa",true);
         Boolean result1 = false;
