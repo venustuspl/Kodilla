@@ -7,23 +7,24 @@ public class ProductOrderService {
     private OrderRepository orderRepository;
 
 
-    public ProductOrderService (final InformationService mailService, final OrderService orderService, final OrderRepository orderRepository){
+    public ProductOrderService(final InformationService mailService, final OrderService orderService, final OrderRepository orderRepository) {
         this.mailService = mailService;
         this.orderService = orderService;
         this.orderRepository = orderRepository;
 
     }
 
-    public OrderDto process(OrderRequest orderRequest){
+    public OrderDto process(OrderRequest orderRequest) {
 
-        Boolean isOrdered = orderService.order(orderRequest.getUser(),orderRequest.getDate(),orderRequest.getThing());
+        Boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getDate(), orderRequest.getThing());
 
-        if (isOrdered){
+        if (isOrdered) {
+            orderRepository.createOrderRepository(orderRequest.getUser(), orderRequest.getDate(), orderRequest.getThing());
             mailService.sendInformation(orderRequest.getUser());
-            orderRepository.createOrderRepository(orderRequest.getUser(),orderRequest.getDate(),orderRequest.getThing());
-            return new OrderDto(orderRequest.getUser(),true);
-        }else{
-            return new OrderDto(orderRequest.getUser(),false);
+
+            return new OrderDto(orderRequest.getUser(), true);
+        } else {
+            return new OrderDto(orderRequest.getUser(), false);
         }
 
 
