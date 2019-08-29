@@ -34,6 +34,10 @@ public class Main {
         System.out.println("---");
 
         jetStory.showFlightsTo(gdansk);
+        
+        System.out.println("---");
+
+        jetStory.showFlightsFromTo(warsaw,wroclaw);
 
 
     }
