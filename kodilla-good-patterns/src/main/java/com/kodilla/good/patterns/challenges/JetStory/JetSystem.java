@@ -1,8 +1,10 @@
 package com.kodilla.good.patterns.challenges.JetStory;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class JetSystem {
+
     private String name;
     private List<Flights> flights;
 
@@ -27,12 +29,37 @@ public class JetSystem {
         this.flights.stream()
                 .filter(e -> e.getStart().equals(airport))
                 .forEach(System.out::println);
-        }
+    }
 
     public void showFlightsTo(Airport airport) {
         this.flights.stream()
                 .filter(e -> e.getEnd().equals(airport))
                 .forEach(System.out::println);
+    }
+
+    public boolean showFlightsFromTo(Airport start, Airport end) {
+        boolean result = false;
+        List<Flights> startFlights = this.flights.stream()
+                .filter(e -> e.getStart().equals(start))
+                .collect(Collectors.toList());
+        System.out.print(" " + start.getName());
+        if (startFlights.size() > 0) {
+            for (Flights checkFlights : startFlights) {
+                if (checkFlights.getStart().equals(start) && (checkFlights.getEnd().equals(end))) {
+                    result = true;
+                    System.out.println(" Found.");
+                    break;
+                } else {
+
+                    showFlightsFromTo(checkFlights.getEnd(), end);
+                }
+
+
+            }
+        }
+
+
+        return result;
     }
 
 

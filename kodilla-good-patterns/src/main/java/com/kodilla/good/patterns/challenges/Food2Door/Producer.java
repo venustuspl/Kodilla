@@ -19,10 +19,10 @@ public class Producer implements Supplier {
         this.hasHeavyGoods = hasHeavyGoods;
         this.hasHighPriorityOrders = hasHighPriorityOrders;
     }
-
     public SupplierOrder process() {
         return new SupplierOrder(this.name, LocalDateTime.now(), this.hasFrozenGoods, this.hasHeavyGoods, this.hasHighPriorityOrders);
     }
+
 
 
 }

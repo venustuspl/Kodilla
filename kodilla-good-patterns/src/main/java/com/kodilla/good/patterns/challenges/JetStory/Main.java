@@ -36,5 +36,8 @@ public class Main {
         jetStory.showFlightsTo(gdansk);
 
 
+        System.out.println("---");
+
+        jetStory.showFlightsFromTo(warsaw,wroclaw);
     }
 }

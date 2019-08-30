@@ -6,7 +6,7 @@ public class Flights {
     private Airport start;
     private Airport end;
 
-    public Flights(Airport start, Airport end) {
+    public Flights( Airport start, Airport end) {
         this.start = start;
         this.end = end;
     }
