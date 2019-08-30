@@ -36,6 +36,33 @@ public class JetSystem {
                 .filter(e -> e.getEnd().equals(airport))
                 .forEach(System.out::println);
     }
+    
+       public boolean showFlightsFromTo(Airport start, Airport end) {
+        result = false;
+        List<Flights> startFlights = this.flights.stream()
+                .filter(e -> e.getStart().equals(start))
+                .collect(Collectors.toList());
+        System.out.print(" " + start.getName());
+        if (startFlights.size()>0){
+        for(Flights checkFlights : startFlights ){
+          if (checkFlights.getStart().equals(start)&&(checkFlights.getEnd().equals(end))){
+              result = true;
+              System.out.println(" Found.");
+                break;
+          } else{
+
+            showFlightsFromTo(checkFlights.getEnd(),end);
+          } 
+
+
+          }
+        } 
+          
+
+        
+
+        return result;
+    }
 
     public boolean showFlightsFromTo(Airport start, Airport end) {
         boolean result = false;
