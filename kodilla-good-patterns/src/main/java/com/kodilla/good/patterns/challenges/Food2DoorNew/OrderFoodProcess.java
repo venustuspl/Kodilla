@@ -7,18 +7,18 @@ public class OrderFoodProcess {
         this.orderRepository = orderRepository;
     }
 
-    public OrderDto run(Producer producent) {
+    public OrderDto run(Producer producent, Order order) {
         boolean isOrder = producent.process();
 
 
         if (isOrder) {
             orderRepository.createOrderRepository(producent.getClass().getSimpleName(), producent.getProduct(), producent.getQuantity());
 
-            return new OrderDto(producent.getProduct(), producent.getQuantity(), true);
+            return new OrderDto(order.getProduct(), order.getQuantity(), true);
 
         } else {
 
-            return new OrderDto(producent.getProduct(), producent.getQuantity(), false);
+            return new OrderDto(order.getProduct(), order.getQuantity(), false);
         }
 
     }
