@@ -36,7 +36,7 @@ public class JetSystem {
                 .filter(e -> e.getEnd().equals(airport))
                 .forEach(System.out::println);
     }
-    
+    /*
        public boolean showFlightsFromTo(Airport start, Airport end) {
         result = false;
         List<Flights> startFlights = this.flights.stream()
@@ -89,7 +89,7 @@ public class JetSystem {
         return result;
     }
 
-
+*/
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

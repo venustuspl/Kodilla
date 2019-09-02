@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.challenges.Food2DoorNew;
 
+import java.util.List;
+
 class Main {
     public static void main(String[] args) {
 
@@ -7,13 +9,15 @@ class Main {
         MakeOrder order = new MakeOrder();
 
 
-        Producer producent = order.makeOrder("Apple", 20.0);
+        List<Producer> mainOrder = order.makeOrder("Apple", 20.0);
 
 
         OrderFoodProcess orderFoodProcess = new OrderFoodProcess(new OrderRepository());
 
 
-        orderFoodProcess.run(producent);
+        for (Producer producent : mainOrder) {
+            orderFoodProcess.run(producent);
+        }
 
 
         System.out.println("End of the program.");

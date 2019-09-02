@@ -36,12 +36,12 @@ public class Main {
         jetStory.showFlightsTo(gdansk);
         
         System.out.println("---");
-
+/*
         jetStory.showFlightsFromTo(warsaw,wroclaw);
 
 
         System.out.println("---");
 
         jetStory.showFlightsFromTo(warsaw,wroclaw);
-    }
+  */  }
 }
