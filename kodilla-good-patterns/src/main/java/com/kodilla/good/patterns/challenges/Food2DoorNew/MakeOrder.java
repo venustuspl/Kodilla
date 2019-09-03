@@ -11,12 +11,12 @@ import static java.lang.Math.abs;
 public class MakeOrder {
 
 
-    public Map<Producer,Order> makeOrder(String product, Double quantity, List <Producer> producers) {
+    public Map<Producer, Order> makeOrder(String product, Double quantity, List<Producer> producers) {
 
-        Map<Producer, Order>cart = new HashMap<>();
-        for (Producer producer: producers) {
-            if ((producer.getProduct()==product)&&(producer.getQuantity()>0)){
-                cart.put(producer, new Order(product,abs(producer.getQuantity()-quantity)));
+        Map<Producer, Order> cart = new HashMap<>();
+        for (Producer producer : producers) {
+            if ((producer.getProduct() == product) && (producer.getQuantity() > 0)) {
+                cart.put(producer, new Order(product, abs(producer.getQuantity() - quantity)));
             }
         }
 

@@ -19,7 +19,7 @@ class Main {
         MakeOrder order = new MakeOrder();
 
 
-        Map<Producer,Order> mainOrder = order.makeOrder("Apple", 20.0,producers);
+        Map<Producer,Order> mainOrder = order.makeOrder("Apple", 4.0,producers);
 
 
         OrderFoodProcess orderFoodProcess = new OrderFoodProcess(new OrderRepository());
