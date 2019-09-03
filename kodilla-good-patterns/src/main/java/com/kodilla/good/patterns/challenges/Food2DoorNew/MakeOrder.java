@@ -16,12 +16,20 @@ public class MakeOrder {
         Map<Producer, Order> cart = new HashMap<>();
         for (Producer producer : producers) {
             if ((producer.getProduct() == product) && (producer.getQuantity() > 0)) {
-                cart.put(producer, new Order(product, abs(producer.getQuantity() - quantity)));
+
+                if (quantity >= producer.getQuantity()) {
+                    cart.put(producer, new Order(product, producer.getQuantity()));
+                    quantity = quantity - producer.getQuantity();
+                } else if (quantity < producer.getQuantity()) {
+                    cart.put(producer, new Order(product, quantity));
+                    break;
+                }
+
             }
+
+
+
         }
-
-
         return cart;
     }
-
 }

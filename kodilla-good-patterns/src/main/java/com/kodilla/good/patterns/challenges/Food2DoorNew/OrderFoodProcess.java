@@ -12,7 +12,7 @@ public class OrderFoodProcess {
 
 
         if (isOrder) {
-            orderRepository.createOrderRepository(producent.getClass().getSimpleName(), producent.getProduct(), producent.getQuantity());
+            orderRepository.createOrderRepository(producent.getClass().getSimpleName(), order.getProduct(), order.getQuantity());
 
             return new OrderDto(order.getProduct(), order.getQuantity(), true);
 
