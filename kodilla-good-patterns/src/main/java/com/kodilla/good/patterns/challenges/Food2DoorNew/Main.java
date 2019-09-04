@@ -18,17 +18,11 @@ class Main {
 
         MakeOrder order = new MakeOrder();
 
-
         Map<Producer, Order> mainOrder = order.makeOrder("Apple", 19.0, producers);
-
 
         OrderFoodProcess orderFoodProcess = new OrderFoodProcess(new OrderRepository());
 
-
-        for (Map.Entry<Producer, Order> producent : mainOrder.entrySet()) {
-            orderFoodProcess.run(producent.getKey(), producent.getValue());
-        }
-
+        orderFoodProcess.run(mainOrder);
 
         System.out.println("End of the program.");
     }
