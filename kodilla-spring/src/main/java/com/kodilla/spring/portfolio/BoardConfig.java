@@ -16,24 +16,28 @@ public class BoardConfig {
 
     @Bean
     public Board getBoard() {
+
         return new Board(taskList, taskList, taskList);
     }
 
     @Bean(name = "getToDoList")
     @Scope("prototype")
     public TaskList getToDoList() {
+
         return new TaskList();
     }
 
     @Bean(name = "getInProgressList")
     @Scope("prototype")
     public TaskList getInProgressList() {
+
         return new TaskList();
     }
 
     @Bean(name = "getDoneList")
     @Scope("prototype")
     public TaskList getDoneList() {
+
         return new TaskList();
     }
 

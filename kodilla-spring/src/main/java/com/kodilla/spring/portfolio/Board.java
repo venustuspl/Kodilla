@@ -13,14 +13,17 @@ public class Board {
     }
 
     public TaskList getInProgressList() {
+        System.out.println("Zwracam listę inProgressList");
         return inProgressList;
     }
 
     public TaskList getToDoList() {
+        System.out.println("Zwracam listę goToDoList");
         return toDoList;
     }
 
     public TaskList getDoneList() {
+        System.out.println("Zwracam listę getDoneList");
         return doneList;
     }
 }
