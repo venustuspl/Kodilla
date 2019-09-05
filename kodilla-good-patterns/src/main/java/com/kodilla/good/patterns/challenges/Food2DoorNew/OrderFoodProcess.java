@@ -9,25 +9,25 @@ public class OrderFoodProcess {
         this.orderRepository = orderRepository;
     }
 
-    public void run(Map<Producer, Order> mapOrder) {
+    public OrderDto run(Map<Producer, Order> mapOrder) {
 
         for (Map.Entry<Producer, Order> producent : mapOrder.entrySet()) {
-
+            //Lista zwrócić
             boolean isOrder = producent.getKey().process();
             if (isOrder) {
 
                 orderRepository.createOrderRepository(producent.getKey().getClass().getSimpleName(), producent.getValue().getProduct(), producent.getValue().getQuantity());
 
-                new OrderDto(producent.getValue().getProduct(), producent.getValue().getQuantity(), true);
+                return new OrderDto(producent.getValue().getProduct(), producent.getValue().getQuantity(), true);
 
             } else {
 
-                new OrderDto(producent.getValue().getProduct(), producent.getValue().getQuantity(), false);
+                return new OrderDto(producent.getValue().getProduct(), producent.getValue().getQuantity(), false);
             }
 
         }
 
-
+        return null;
     }
 
 }

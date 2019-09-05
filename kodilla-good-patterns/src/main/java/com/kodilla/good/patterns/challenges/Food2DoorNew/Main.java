@@ -20,6 +20,7 @@ class Main {
 
         Map<Producer, Order> mainOrder = order.makeOrder("Apple", 19.0, producers);
 
+        //makeOrder i producery w konstruktorze
         OrderFoodProcess orderFoodProcess = new OrderFoodProcess(new OrderRepository());
 
         orderFoodProcess.run(mainOrder);

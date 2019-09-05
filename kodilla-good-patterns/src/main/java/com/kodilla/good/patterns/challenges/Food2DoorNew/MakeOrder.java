@@ -17,6 +17,7 @@ public class MakeOrder {
         for (Producer producer : producers) {
             if ((producer.getProduct() == product) && (producer.getQuantity() > 0)) {
 
+                //obniżanie wartości, porównanie przez equals
                 if (quantity >= producer.getQuantity()) {
                     cart.put(producer, new Order(product, producer.getQuantity()));
                     quantity = quantity - producer.getQuantity();
