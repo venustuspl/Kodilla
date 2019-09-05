@@ -16,14 +16,15 @@ class Main {
         producers.add(healthyShop);
         producers.add(glutenFreeShop);
 
-        MakeOrder order = new MakeOrder();
+        Order order = new Order("Apple", 19.0);
 
-        Map<Producer, Order> mainOrder = order.makeOrder("Apple", 19.0, producers);
+        OrderFoodProcess orderFoodProcess = new OrderFoodProcess(new OrderRepository(),order, producers);
 
-        //makeOrder i producery w konstruktorze
-        OrderFoodProcess orderFoodProcess = new OrderFoodProcess(new OrderRepository());
+        List<OrderDto> orderDto = orderFoodProcess.run();
 
-        orderFoodProcess.run(mainOrder);
+        for(OrderDto result : orderDto){
+            System.out.println(result.getProducer() + " " + result.getProduct() + " " + result.getQuantity());
+        }
 
         System.out.println("End of the program.");
     }

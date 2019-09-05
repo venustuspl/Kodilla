@@ -17,17 +17,17 @@ public class MakeOrder {
         for (Producer producer : producers) {
             if ((producer.getProduct() == product) && (producer.getQuantity() > 0)) {
 
-                //obniżanie wartości, porównanie przez equals
-                if (quantity >= producer.getQuantity()) {
+                if (quantity.equals(producer.getQuantity()) || quantity > producer.getQuantity()) {
                     cart.put(producer, new Order(product, producer.getQuantity()));
                     quantity = quantity - producer.getQuantity();
+                    producer.setQuantity(0);
                 } else if (quantity < producer.getQuantity()) {
                     cart.put(producer, new Order(product, quantity));
+                    producer.setQuantity(producer.getQuantity() - quantity);
                     break;
                 }
 
             }
-
 
 
         }

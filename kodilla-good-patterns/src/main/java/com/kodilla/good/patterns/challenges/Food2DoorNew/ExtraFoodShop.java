@@ -17,6 +17,10 @@ class ExtraFoodShop implements Producer {
         return this.quantity;
     }
 
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
+    }
+
     public boolean process() {
         System.out.println("ExtraFoodShop order processed: " + "Product: " + getProduct() +
                 "Quantity: " + getQuantity());

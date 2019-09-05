@@ -6,4 +6,6 @@ public interface Producer {
     public double getQuantity();
 
     public boolean process();
+
+    public void setQuantity(double quantity);
 }

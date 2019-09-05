@@ -4,11 +4,13 @@ public class OrderDto {
     private String product;
     private double quantity;
     private boolean isOrder;
+    private String producer;
 
-    public OrderDto(String product, double quantity, boolean isOrder) {
+    public OrderDto(String product, double quantity, boolean isOrder, String producer) {
         this.product = product;
         this.quantity = quantity;
         this.isOrder = isOrder;
+        this.producer = producer;
     }
 
     public String getProduct() {
@@ -23,5 +25,7 @@ public class OrderDto {
         return this.isOrder;
     }
 
-
+    public String getProducer() {
+        return producer;
+    }
 }
