@@ -13,6 +13,7 @@ public class BoardConfig {
     @Qualifier("getToDoList")
     @Autowired
     private TaskList ToDoList;
+
     @Qualifier("getInProgressList")
     @Autowired
     private TaskList InProgressList;
@@ -22,6 +23,7 @@ public class BoardConfig {
 
     @Bean
     public Board getBoard() {
+
         return new Board(getToDoList(), getInProgressList(), getDoneList());
     }
 

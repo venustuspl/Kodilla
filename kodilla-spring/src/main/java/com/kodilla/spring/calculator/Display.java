@@ -9,5 +9,5 @@ public class Display {
         System.out.println(val);
     }
 
-    ;
+
 }
