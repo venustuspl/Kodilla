@@ -36,4 +36,12 @@ public class Library extends Prototype {
 
         return clonedLibrary;
     }
+
+    @Override
+    public String toString() {
+        return "Library{" +
+                "name='" + name + '\'' +
+                ", books=" + books +
+                '}';
+    }
 }
