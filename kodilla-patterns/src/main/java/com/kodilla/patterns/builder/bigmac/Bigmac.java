@@ -17,8 +17,8 @@ public class Bigmac {
     }
 
     public static class BicmacBuilder {
-        private String bun;
-        private int burgers;
+        private String bun = "Thin";
+        private int burgers = 1;
         private String sauce;
         private List<String> ingredients = new ArrayList<>();
 
