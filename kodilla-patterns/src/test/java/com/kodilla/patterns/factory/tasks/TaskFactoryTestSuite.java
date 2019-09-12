@@ -11,7 +11,7 @@ public class TaskFactoryTestSuite {
 
         TaskFactory taskFactory = new TaskFactory();
 
-        Task drivingTask = taskFactory.makeTask(taskFactory.DrivingTask);
+        Task drivingTask = taskFactory.makeTask(taskFactory.CONSTANT_DrivingTask);
 
         drivingTask.executeTask();
 
