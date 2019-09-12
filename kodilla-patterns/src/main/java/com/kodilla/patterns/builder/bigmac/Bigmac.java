@@ -13,7 +13,7 @@ public class Bigmac {
         this.bun = bun;
         this.burgers = burgers;
         this.sauce = sauce;
-        this.ingredients = ingredients ;
+        this.ingredients = ingredients;
     }
 
     public static class BicmacBuilder {
@@ -25,12 +25,20 @@ public class Bigmac {
         //utworzyć konstruktor bic mac, i sprawdzanie czy ma wartości -2,
 
         public BicmacBuilder bun(String bun) {
-            this.bun = bun;
+            if (bun.length() == 0){
+                this.bun = "Light_Thin";
+            } else {
+                this.bun = bun;
+            }
             return this;
         }
 
         public BicmacBuilder burgers(int burgers) {
-            this.burgers = burgers;
+            if (burgers < 1) {
+                this.burgers = 1;
+            } else {
+                this.burgers = burgers;
+            }
             return this;
         }
 

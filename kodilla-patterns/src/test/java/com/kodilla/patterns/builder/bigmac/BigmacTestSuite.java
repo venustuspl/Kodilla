@@ -9,11 +9,11 @@ public class BigmacTestSuite {
         //Given
         Bigmac bigmac = new Bigmac.BicmacBuilder()
                 .ingredient("Onion")
-                //.bun("Thin")
+                .bun("")
                 .sauce("Spicy")
                 .ingredient("Ham")
                 .ingredient("Mushrooms")
-                //.burgers(2)
+                .burgers(0)
                 .build();
         System.out.println(bigmac);
         //When
