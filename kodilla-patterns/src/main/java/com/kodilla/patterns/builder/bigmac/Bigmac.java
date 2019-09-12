@@ -22,6 +22,8 @@ public class Bigmac {
         private String sauce;
         private List<String> ingredients = new ArrayList<>();
 
+        //utworzyć konstruktor bic mac, i sprawdzanie czy ma wartości -2,
+
         public BicmacBuilder bun(String bun) {
             this.bun = bun;
             return this;
