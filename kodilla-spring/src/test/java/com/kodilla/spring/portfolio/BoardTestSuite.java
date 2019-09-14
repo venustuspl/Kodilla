@@ -15,8 +15,10 @@ public class BoardTestSuite {
         Board board = context.getBean(Board.class);
         //When & Then
 
-        Assert.assertNotNull(board.getToDoList());
-        Assert.assertNotNull(board.getToDoList());
-        Assert.assertNotNull(board.getDoneList());
+        //Assert.assertNotNull(board.getToDoList());
+        //Assert.assertNotNull(board.getToDoList());
+        //Assert.assertNotNull(board.getDoneList());
+        board.getMyList();
+        Assert.assertNotNull(board.getMyList());
     }
 }

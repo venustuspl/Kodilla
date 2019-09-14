@@ -17,12 +17,18 @@ public class Bigmac {
     }
 
     public static class BicmacBuilder {
-        private String bun = "Thin";
-        private int burgers = 1;
+        private String bun ;
+        private int burgers ;
         private String sauce;
         private List<String> ingredients = new ArrayList<>();
 
         //utworzyć konstruktor bic mac, i sprawdzanie czy ma wartości -2,
+
+
+        public BicmacBuilder() {
+            this.bun = "Thin";
+            this.burgers = 1;
+            }
 
         public BicmacBuilder bun(String bun) {
             if (bun.length() == 0){

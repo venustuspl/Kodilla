@@ -20,11 +20,14 @@ public class BoardConfig {
     @Qualifier("getDoneList")
     @Autowired
     private TaskList DoneList;
+    @Qualifier("getMy")
+    @Autowired
+    private TaskList MyList;
 
     @Bean
     public Board getBoard() {
 
-        return new Board(getToDoList(), getInProgressList(), getDoneList());
+        return new Board(getToDoList(), getInProgressList(), getDoneList(),getMyList());
     }
 
     @Bean(name = "getToDoList")
@@ -47,5 +50,9 @@ public class BoardConfig {
 
         return new TaskList();
     }
-
+    @Bean(name = "getMy")
+    @Scope("prototype")
+    public TaskList getMyList(){
+        return new TaskList();
+    }
 }
