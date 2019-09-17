@@ -3,7 +3,7 @@ package com.kodilla.testing.weather.stub;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WeatherForecast {
+public class    WeatherForecast {
     Temperatures temperatures;
 
     public WeatherForecast(Temperatures temperatures){
