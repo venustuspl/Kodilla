@@ -11,4 +11,6 @@ include 'kodilla-good-patterns'
 include 'kodilla-spring'
 include 'kodilla-patterns'
 include 'kodilla-jdbc'
+include 'Test20190921'
+include 'kodilla-hibernate'
 
