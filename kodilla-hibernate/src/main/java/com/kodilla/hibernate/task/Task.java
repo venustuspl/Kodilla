@@ -26,6 +26,8 @@ public final class Task {
         this.duration = duration;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "TASKLIST_ID")
     public TaskList getTaskList() {
         return taskList;
     }

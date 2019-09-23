@@ -2,6 +2,7 @@ package com.kodilla.hibernate.task.dao;
 
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
+import com.kodilla.hibernate.tasklist.TaskList;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -48,11 +49,12 @@ public class TaskDaoTestSuite {
         //List<Task> readTasks = taskDao.findByDuration(duration);
 
         //Then
-       // Assert.assertEquals(1, readTasks.size());
+        // Assert.assertEquals(1, readTasks.size());
         //CleanUp
         //int id = readTasks.get(0).getId();
         //taskDao.deleteById(id);
     }
+
     @Test
     public void testTaskDaoSaveWithFinancialDetails() {
         //Given
@@ -69,4 +71,6 @@ public class TaskDaoTestSuite {
         //CleanUp
         //taskDao.deleteById(id);
     }
+
+
 }
