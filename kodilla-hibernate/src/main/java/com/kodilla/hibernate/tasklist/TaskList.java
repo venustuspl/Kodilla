@@ -12,9 +12,25 @@ import java.util.List;
 @Entity
 @Table(name = "TASKLIST")
 public class TaskList {
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID", unique = true)
     private int id;
+
+    @Column(name = "LISTNAME")
     private String listName;
+
+    @Column(name = "DESCRIPTION")
     private String description;
+
+    @OneToMany(
+            targetEntity = Task.class,
+            mappedBy = "taskList",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
     private List<Task> tasks = new ArrayList<>();
 
     public TaskList() {
@@ -25,12 +41,7 @@ public class TaskList {
         this.description = description;
     }
 
-    @OneToMany(
-        targetEntity = Task.class,
-                mappedBy = "taskList",
-                cascade = CascadeType.ALL,
-                fetch = FetchType.LAZY
-    )
+
     public List<Task> getTasks() {
         return tasks;
     }
@@ -39,10 +50,6 @@ public class TaskList {
         this.tasks = tasks;
     }
 
-    @Id
-    @GeneratedValue
-    @NotNull
-    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
@@ -51,7 +58,6 @@ public class TaskList {
         this.id = id;
     }
 
-    @Column(name = "LISTNAME")
     public String getListName() {
         return listName;
     }
@@ -60,7 +66,6 @@ public class TaskList {
         this.listName = listName;
     }
 
-    @Column(name = "DESCRIPTION")
     public String getDescription() {
         return description;
     }

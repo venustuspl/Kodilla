@@ -30,7 +30,7 @@ public class TaskFinancialDetailsDaoTestSuite {
         //Then
         Assert.assertEquals(1, resultList.size());
 
-        //CleanUp
+        //CleanUp8bfa1ac git reset --hard <8bfa1ac> && git clean -f
         taskFinancialDetailsDao.deleteById(id);
     }
 
