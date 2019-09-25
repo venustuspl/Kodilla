@@ -1,3 +1,4 @@
+/*
 package com.kodilla.hibernate.manytomany;
 
 import javax.persistence.*;
@@ -66,3 +67,4 @@ public class Employee {
         this.lastname = lastname;
     }
 }
+*/

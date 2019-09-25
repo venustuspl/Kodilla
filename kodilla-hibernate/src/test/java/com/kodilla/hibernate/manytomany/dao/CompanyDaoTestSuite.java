@@ -1,4 +1,4 @@
-package com.kodilla.hibernate.manytomany.dao;
+/*package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
@@ -8,12 +8,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-/*
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
-    CompanyDao companyDao;
+    private CompanyDao companyDao;
 
     @Test
     public void testSaveManyToMany(){
@@ -62,4 +62,4 @@ public class CompanyDaoTestSuite {
     }
 }
 
- */
+*/

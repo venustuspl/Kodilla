@@ -1,3 +1,4 @@
+/*
 package com.kodilla.hibernate.manytomany;
 
 import javax.persistence.*;
@@ -50,3 +51,4 @@ public class Company {
         this.name = name;
     }
 }
+*/

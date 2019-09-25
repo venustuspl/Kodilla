@@ -1,4 +1,3 @@
-/*
 package com.kodilla.hibernate.invoice;
 
 import javax.persistence.*;
@@ -7,8 +6,28 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "PRODUCT")
 public class Product {
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID", unique = true)
     private int id;
+
+    @NotNull
+    @Column(name="NAME")
     private String name;
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ITEM_ID")
+    Item item;
 
     public Product(){
 
@@ -19,10 +38,6 @@ public class Product {
         this.name = name;
     }
 
-    @Id
-    @GeneratedValue
-    @NotNull
-    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
@@ -31,8 +46,6 @@ public class Product {
         this.id = id;
     }
 
-    @NotNull
-    @Column(name="NAME")
     public String getName() {
         return name;
     }
@@ -41,4 +54,3 @@ public class Product {
         this.name = name;
     }
 }
-*/
