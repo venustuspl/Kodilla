@@ -1,10 +1,17 @@
-/*
+
 package com.kodilla.hibernate.manytomany;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
+
+@NamedQuery(
+        name = "Employee.EmployeeByLastname",
+        query = "FROM Employee where lastname = :LASTNAME"
+)
+
 
 @Entity
 @Table(name = "EMPLOYEES")
@@ -67,4 +74,3 @@ public class Employee {
         this.lastname = lastname;
     }
 }
-*/
