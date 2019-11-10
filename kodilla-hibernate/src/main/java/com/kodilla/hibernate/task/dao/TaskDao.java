@@ -13,6 +13,7 @@ List<Task> findByDuration(int duration);
     List<Task> retrieveLongTasks();
     @Query
     List<Task> retrieveShortTasks();
+
     @Query(nativeQuery = true)
     List<Task> retrieveTasksWithEnoughTime();
 

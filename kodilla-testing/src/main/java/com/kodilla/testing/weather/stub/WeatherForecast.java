@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class    WeatherForecast {
+
     Temperatures temperatures;
 
     public WeatherForecast(Temperatures temperatures){
@@ -12,6 +13,7 @@ public class    WeatherForecast {
     }
 
     public HashMap<Integer, Double> calculateForecast() {
+
         HashMap<Integer, Double> resultMap = new HashMap<Integer, Double>();
 
         for(Map.Entry<Integer, Double> temperature :

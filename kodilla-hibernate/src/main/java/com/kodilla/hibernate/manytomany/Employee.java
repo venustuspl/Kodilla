@@ -12,6 +12,11 @@ import java.util.List;
         query = "FROM Employee where lastname = :LASTNAME"
 )
 
+@NamedQuery(
+        name = "Employee.EmployeeByAnyLettersFromLastname",
+        query = "FROM Employee where lastname like :LASTNAME"
+)
+
 
 @Entity
 @Table(name = "EMPLOYEES")

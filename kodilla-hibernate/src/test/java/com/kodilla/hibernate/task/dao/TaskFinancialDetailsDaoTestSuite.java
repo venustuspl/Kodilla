@@ -18,6 +18,10 @@ public class TaskFinancialDetailsDaoTestSuite {
 
     @Test
     public void testFindByPaid() {
+        //Before Clean up
+
+        taskFinancialDetailsDao.deleteAll();
+
         //Given
         TaskFinancialDetails taskFinancialDetails =
                 new TaskFinancialDetails(new BigDecimal(115), false);
@@ -31,7 +35,7 @@ public class TaskFinancialDetailsDaoTestSuite {
         Assert.assertEquals(1, resultList.size());
 
         //CleanUp8bfa1ac git reset --hard <8bfa1ac> && git clean -f
-        taskFinancialDetailsDao.deleteById(id);
+//        taskFinancialDetailsDao.deleteById(id);
     }
 
 

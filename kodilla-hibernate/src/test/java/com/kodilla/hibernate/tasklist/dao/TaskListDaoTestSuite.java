@@ -25,14 +25,17 @@ public class TaskListDaoTestSuite {
     @Autowired
     TaskDao taskDao;
 
+
     @Autowired
     private TaskListDao taskListDao;
     private static final String DESCRIPTION = "TEST ZAWARTOŚCI LISTY";
     private static final String LISTNAME = "NAZWA LISTY";
 
+    @Ignore
     @Test
     public void testFindByListName() {
-        
+        //CleanUp
+        taskListDao.deleteAll();
         //Given
         TaskList taskList = new TaskList(LISTNAME, DESCRIPTION);
 
@@ -42,14 +45,16 @@ public class TaskListDaoTestSuite {
         //Then
         int id = taskList.getId();
         List<TaskList> readTaskList = taskListDao.findByListName("NAZWA LISTY");
-        Assert.assertEquals(4, readTaskList.size());
+        Assert.assertEquals(1, readTaskList.size());
 
         //CleanUp
         taskListDao.deleteById(id);
     }
-
+@Ignore
     @Test
     public void testTaskListDaoSaveWithTasks() {
+        taskListDao.deleteAll();
+
         //Given
         Task task = new Task("Test: Learn Hibernate", 14);
         Task task2 = new Task("Test: Write some entities", 3);
@@ -74,9 +79,13 @@ public class TaskListDaoTestSuite {
         taskListDao.deleteById(id);
     }
 
-    @Ignore
+    //@Ignore
     @Test
     public void testNamedQueries() {
+        taskListDao.deleteAll();
+        taskDao.deleteAll();
+
+
         //Given
         Task task1 = new Task("Test: Study Hibernate", 3);
         Task task2 = new Task("Test: Practice Named Queries", 6);

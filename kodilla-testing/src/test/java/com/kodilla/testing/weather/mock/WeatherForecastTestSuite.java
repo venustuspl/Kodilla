@@ -33,16 +33,16 @@ public class WeatherForecastTestSuite {
         Assert.assertEquals(5, quantityOfSensors);
     }
 
-@Test
-    public void myTest(){
+    @Test
+    public void myTest() {
         //Given
         Temperatures tMock = mock(Temperatures.class);
-        HashMap<Integer,Double> tMap = new HashMap<>();
-        tMap.put(0,7.0);
+        HashMap<Integer, Double> tMap = new HashMap<>();
+        tMap.put(0, 7.0);
         //When
         when(tMock.getTemperatures()).thenReturn(tMap);
-
-        Assert.assertEquals(tMock.getTemperatures().size(),1);
-}
+        //Then
+        Assert.assertEquals(tMock.getTemperatures().size(), 1);
+    }
 
 }

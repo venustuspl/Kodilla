@@ -20,7 +20,7 @@ import java.util.Date;
 @NamedNativeQuery(
         name = "Task.retrieveTasksWithEnoughTime",
         query = "SELECT * FROM TASKS" +
-                "WHERE DATEDIFF(DATE_ADD(CREATED, INTERVAL DURATION DAY), NOW())>5",
+                " WHERE DATEDIFF(DATE_ADD(CREATED, INTERVAL DURATION DAY), NOW())>5",
         resultClass = Task.class
 )
 @Entity
@@ -54,6 +54,7 @@ public final class Task {
     }
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "TF_ID123")
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
     }
