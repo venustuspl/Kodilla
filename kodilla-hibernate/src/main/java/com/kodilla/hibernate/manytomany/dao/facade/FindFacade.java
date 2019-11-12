@@ -14,13 +14,13 @@ import java.util.List;
 @Service
 public class FindFacade {
 
-    boolean wasError = false;
+    private boolean wasError = false;
 
     @Autowired
-    CompanyDao companyDao;
+    private CompanyDao companyDao;
 
     @Autowired
-    EmployeeDao employeeDao;
+    private EmployeeDao employeeDao;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CompanyDao.class);
 
@@ -34,10 +34,6 @@ public class FindFacade {
                 LOGGER.error(FindingException.ERR_COMPANY_NOT_FOUND);
                 throw new FindingException(FindingException.ERR_COMPANY_NOT_FOUND);
             }
-
-//            result.stream()
-//                    .map(o -> o.getName())
-//                    .forEach(System.out::println);
 
             return result;
         } finally {
