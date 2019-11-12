@@ -8,14 +8,14 @@ import java.util.List;
 
 
 @NamedNativeQuery(
-        name = "Company.CompaniesByFirstLetters",
+        name = "Company.companiesByFirstLetters",
         query = "SELECT * FROM  COMPANIES WHERE COMPANY_NAME like :LETTERS",
         resultClass = Company.class
 )
 
 @NamedNativeQuery(
-        name = "Company.CompaniesByAnyLetters",
-        query = "SELECT * FROM  COMPANIES WHERE COMPANY_NAME like :LETTERS ",
+        name = "Company.companiesByAnyLetters",
+        query = "SELECT * FROM  COMPANIES WHERE COMPANY_NAME like :LETTERS  ",
         resultClass = Company.class
 )
 

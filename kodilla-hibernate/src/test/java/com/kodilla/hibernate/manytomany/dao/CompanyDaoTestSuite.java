@@ -21,7 +21,7 @@ public class CompanyDaoTestSuite {
     private EmployeeDao employeeDao;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -56,7 +56,7 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
 
-         //CleanUp
+        //CleanUp
         try {
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
@@ -67,7 +67,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testQueries(){
+    public void testQueries() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -94,13 +94,13 @@ public class CompanyDaoTestSuite {
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
 
-        List<Employee> result = employeeDao.EmployeeByLastname("Smith");
-       List<Company> companyNameWithBegin = companyDao.CompaniesByFirstLetters("Dat%");
+        List<Employee> result = employeeDao.employeeByLastname("Smith");
+        List<Company> companyNameWithBegin = companyDao.companiesByFirstLetters("Dat%");
 
 
         //Then
         Assert.assertEquals(1, result.size());
-        Assert.assertEquals(2,companyNameWithBegin.size());
+        Assert.assertEquals(2, companyNameWithBegin.size());
 
 
         //CleanUp
@@ -109,5 +109,6 @@ public class CompanyDaoTestSuite {
             employeeDao.deleteAll();
         } catch (Exception e) {
             //do nothing
-        }}
+        }
+    }
 }

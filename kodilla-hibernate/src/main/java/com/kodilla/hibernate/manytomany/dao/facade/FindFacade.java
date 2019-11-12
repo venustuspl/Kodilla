@@ -26,7 +26,7 @@ public class FindFacade {
 
     public List<Company> findingCompanyProccesor(String letters) throws FindingException {
         try {
-            List<Company> result = companyDao.CompaniesByAnyLetters(letters);
+            List<Company> result = companyDao.companiesByAnyLetters(letters);
             LOGGER.info("Company founded.");
 
             if (result.size() == 0) {
@@ -46,7 +46,7 @@ public class FindFacade {
 
     public List<Employee> findingEmployeeProccesor(String letters) throws FindingException {
         try {
-            List<Employee> result = employeeDao.EmployeeByAnyLettersFromLastname(letters);
+            List<Employee> result = employeeDao.employeeByAnyLettersFromLastname(letters);
             LOGGER.info("Employee founded.");
 
             if (result.size() == 0) {

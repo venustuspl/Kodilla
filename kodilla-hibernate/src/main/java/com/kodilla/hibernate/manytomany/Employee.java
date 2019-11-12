@@ -8,12 +8,12 @@ import java.util.List;
 
 
 @NamedQuery(
-        name = "Employee.EmployeeByLastname",
+        name = "Employee.employeeByLastname",
         query = "FROM Employee where lastname = :LASTNAME"
 )
 
 @NamedQuery(
-        name = "Employee.EmployeeByAnyLettersFromLastname",
+        name = "Employee.employeeByAnyLettersFromLastname",
         query = "FROM Employee where lastname like :LASTNAME"
 )
 
