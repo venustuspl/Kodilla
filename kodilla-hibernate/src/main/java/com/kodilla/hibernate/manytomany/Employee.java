@@ -14,7 +14,7 @@ import java.util.List;
 
 @NamedQuery(
         name = "Employee.employeeByAnyLettersFromLastname",
-        query = "FROM Employee where lastname like '%:LASTNAME%'"
+        query = "FROM Employee where lastname like :LASTNAME"
 )
 
 
