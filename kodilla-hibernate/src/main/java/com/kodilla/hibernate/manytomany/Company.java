@@ -15,7 +15,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.companiesByAnyLetters",
-        query = "SELECT * FROM  COMPANIES WHERE COMPANY_NAME like :LETTERS  ",
+        query = "SELECT * FROM  COMPANIES WHERE COMPANY_NAME like '%':LETTERS'%'",
         resultClass = Company.class
 )
 
