@@ -16,6 +16,7 @@ public class Statistics implements BookStatistics {
 
     @Override
     public int medianPublicationYear(Map<BookSignature, Book> books) {
+      //  System.out.println(books.size());
         if (books.size() == 0) return 0;
         int[] years = new int[books.size()];
         int n = 0;
@@ -24,6 +25,7 @@ public class Statistics implements BookStatistics {
             n++;
         }
         Arrays.sort(years);
+     //   System.out.println(years.length);
         if (years.length % 2 == 0){
             return years[(int)(years.length / 2 + 0.5)];
         } else {
