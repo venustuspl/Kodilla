@@ -40,16 +40,16 @@ public class StoredProcTestSuite {
         statement.executeUpdate(sqlUpdate);
 
         //When
-        //String sqlProcedureCall = "Call UpdateBestsellers()";
-        //statement.executeUpdate(sqlProcedureCall);
+        String sqlProcedureCall = "Call UpdateBestsellers()";
+        statement.executeUpdate(sqlProcedureCall);
 
         //Then
-        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM books WHERE bestseller=0";
+        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM books WHERE bestseller=1";
         ResultSet rs = statement.executeQuery(sqlCheckTable);
         int howMany = -1;
         if (rs.next()) {
             howMany = rs.getInt("HOW_MANY");
         }
-        assertEquals(4, howMany);
+        assertEquals(1, howMany);
     }
 }
