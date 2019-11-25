@@ -8,6 +8,7 @@ build/
 **/out/
 -**/build/
 
+
 ### STS ###
 .apt_generated
 .classpath
@@ -24,6 +25,7 @@ build/
 *.ipr
 out/
 
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -33,3 +35,4 @@ out/
 
 ### VS Code ###
 .vscode/
+

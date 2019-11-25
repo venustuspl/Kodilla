@@ -82,8 +82,8 @@ public class TaskListDaoTestSuite {
     //@Ignore
     @Test
     public void testNamedQueries() {
-        taskListDao.deleteAll();
-        taskDao.deleteAll();
+      //  taskListDao.deleteAll();
+       // taskDao.deleteAll();
 
 
         //Given
