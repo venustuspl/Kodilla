@@ -15,4 +15,5 @@ include 'Test20190921'
 include 'kodilla-hibernate'
 include 'kodilla-patterns2'
 include 'kodilla-patterns2'
+include 'kodilla-testing2'
 
